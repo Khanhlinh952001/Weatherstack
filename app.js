@@ -63,7 +63,9 @@ app.get("/", async (req, res) => {
 const pathPublic = path.join(__dirname, "public");
 app.use(express.static(pathPublic));
 
+const port = process.env.PORT || 3000 ;
+server.listen(port, () => {
+  console.log(`server running at http://localhost:${port}`);
+});
+// Lắng nghe cổng được chọn hoặc cổng 3000 nếu không có cổng nào được cung cấp
 
-app.listen(3000, () => {
-    console.log("http://localhost:3000")
-})
